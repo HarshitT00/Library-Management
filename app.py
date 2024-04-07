@@ -20,6 +20,8 @@ async def create_student(student: Student):
         raise HTTPException(status_code=400, detail="Name required")
     if not student.age:
         raise HTTPException(status_code=400, detail="Age required")
+    if not student.address:
+        raise HTTPException(status_code=400, detail="Address required")
     if not student.address.city:
         raise HTTPException(status_code=400, detail="City required")
     if not student.address.country:
